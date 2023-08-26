@@ -4,6 +4,22 @@ This repository highlights aspects of Azure durable functions, particularly clie
 
 ## Running locally
 
+### Create local settings
+
+Create a `local.settings.json` file in the root of the repo and add the following settings:
+
+```
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "node"
+  }
+}
+```
+
+### Run Azure storage emulator
+
 To run this project locally using VS Code, install the [Azure Tools extension](https://code.visualstudio.com/docs/azure/extensions) and run the local Azure storage emulator for the following:
 
 - Blob containers
