@@ -1,0 +1,90 @@
+{
+	"info": {
+		"_postman_id": "bff661d2-0ddc-4c33-949b-40538b281449",
+		"name": "Durable Function Demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22858597"
+	},
+	"item": [
+		{
+			"name": "Star Wars",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"people\": [\n        {\n            \"name\": \"Luke Skywalker\",\n            \"birthYear\": \"19BBY\",\n            \"eyeColor\": \"Blue\",\n            \"height\": 172,\n            \"race\": \"Human\"\n        },\n        {\n            \"name\": \"Anakin Skywalker\",\n            \"birthYear\": \"41BBY\",\n            \"eyeColor\": \"Blue\",\n            \"height\": 202,\n            \"race\": \"Human\"\n        },\n        {\n            \"name\": \"Yoda\",\n            \"birthYear\": \"896BBY\",\n            \"eyeColor\": \"Brown\",\n            \"height\": 66,\n            \"race\": \"Unknown\"\n        }\n    ],\n    \"vehicles\": [\n        {\n            \"name\": \"Millennium Falcon\",\n            \"type\": \"Light freighter\"\n        },\n        {\n            \"name\": \"X-wing starfighter\",\n            \"type\": \"Starfighter\"\n        },\n        {\n            \"name\": \"AT-AT\",\n            \"type\": \"Walker\"\n        }\n    ],\n    \"counterId\": \"StarWarsPeopleCount\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7071/api/orchestrators/StarWars",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7071",
+					"path": [
+						"api",
+						"orchestrators",
+						"StarWars"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Counter",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"counterId\": \"StarWarsPeopleCount\",\n    \"counterOption\": \"get\" // set to \"get\" to fetch the count or \"reset\" to reset the count to 0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7071/api/Counter",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7071",
+					"path": [
+						"api",
+						"Counter"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Flaky",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7071/api/orchestrators/Flaky",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7071",
+					"path": [
+						"api",
+						"orchestrators",
+						"Flaky"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
